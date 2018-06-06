@@ -1,8 +1,8 @@
 import React from 'react'
 import * as contentful from 'contentful';
 import BlogItem from './blog/BlogItem'
-
-
+import PageHeader from '../components/PageHeader'
+import PageContent from '../components/PageContent'
 
 class Blog extends React.Component {
     state = {
@@ -24,9 +24,10 @@ class Blog extends React.Component {
       render() {
         return (
             <div>
-          <p>coding...thinking</p>
+          <PageHeader color="is-warning" title="Everyday">
+         </PageHeader>
           { this.state.posts.map(({fields}, i) =>
-          <BlogItem key={i} {...fields} />
+          <PageContent {...fields} color="is-info"><BlogItem key={i} {...fields} /></PageContent>
       )}
       </div>
         )
