@@ -1,13 +1,13 @@
 import React from 'react'
 
 const Footer = () => (
-  <div className="footer has-background-primary">
-    <div className="container-fluid">
+  <div className="footer has-background-black " style={{padding:10}}>
+    <div className="container">
       <div className="content has-text-centered  ">
-        <p>
-          this is footer
+        <h1 className='has-text-warning'>
+          A Developer
           
-        </p>
+        </h1>
       </div>
     </div>
   </div>

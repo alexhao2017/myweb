@@ -3,13 +3,14 @@
 // 2. Setup your Custom Colors
 $purple: hsl(275,87%,45%);
 $purple-invert: findColorInvert($purple);
-$orange:rgb(228, 111, 11);
+$orange:rgb(255, 165, 0);
 $navbar-background-color: $orange;
 
 //$navbar-item-hover-background-color:$orange;
 $navbar-item-color:$white;
 $navbar-item-hover-color:$black;
 $navbar-dropdown-background-color:$orange;
+$divider-color:$black;
 // 3. Add new color variables to the color map.
 @import "bulma/sass/utilities/derived-variables.sass";
 $addColors: (

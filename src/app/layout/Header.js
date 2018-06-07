@@ -24,16 +24,18 @@ class Header extends Component {
               style={{
                 
                 maxHeight:'80px',
-                marginRight: 2
+                marginRight: 2,
+                backgroundColor: 'orange'
+
               }}
-              src="usydlogo.png"
-              alt="hao`s uni"  />
+              src="timeline.png"
+              alt="hao`s world"  />
             
           </NavLink>
         </div>
         <div className={ this.state.isActive ? 'navbar-menu is-active' : 'navbar-menu'}>
           <div className="navbar-start">
-            <NavLink className="navbar-item" to='Blog' activeClassName='is-active'>
+            <NavLink className="navbar-item" to='blog' activeClassName='is-active'>
               <span className="icon" style={{ marginRight: 5 }}>
                 <i className="fas fa-code"></i>
               </span >
