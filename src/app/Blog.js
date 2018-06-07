@@ -23,11 +23,11 @@ class Blog extends React.Component {
       }
       render() {
         return (
-            <div>
-          <PageHeader color="is-warning" title="Everyday">
+            <div style={{backgroundColor:'orange'}}>
+          <PageHeader color="is-warning" title="Everyday coding">
          </PageHeader>
           { this.state.posts.map(({fields}, i) =>
-          <PageContent {...fields} color="is-info"><BlogItem key={i} {...fields} /></PageContent>
+          <BlogItem key={i} {...fields} />
       )}
       </div>
         )
