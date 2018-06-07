@@ -3,8 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { configureStore } from './store/index'
+import { loadBlog } from './store/Blog'
 
-ReactDOM.render(<Router>
+const store = configureStore()
+store.dispatch(loadBlog())
+ReactDOM.render(
+<Provider store={store}><Router>
     <App />
-  </Router>, document.getElementById('root'));
+  </Router>
+  </Provider>, document.getElementById('root'));
 

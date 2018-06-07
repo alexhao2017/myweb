@@ -3,7 +3,8 @@ import * as contentful from 'contentful';
 import BlogItem from './blog/BlogItem'
 import PageHeader from '../components/PageHeader'
 import PageContent from '../components/PageContent'
-
+import { connect } from 'react-redux'
+import {Loader} from '../components/Loader'
 class Blog extends React.Component {
     state = {
       posts: []
@@ -26,11 +27,21 @@ class Blog extends React.Component {
             <div style={{backgroundColor:'orange'}}>
           <PageHeader color="is-warning" title="Everyday coding">
          </PageHeader>
-          { this.state.posts.map(({fields}, i) =>
+         { this.props.blog.loading
+    ? <Loader className="has-text-primary"></Loader>
+    : <PageContent>
+        { this.props.blog.posts.map(({fields}, i) =>
           <BlogItem key={i} {...fields} />
-      )}
+        )}
+      </PageContent>}
       </div>
         )
       }
     }
-    export default Blog
+
+   function mapStateToProps(state, ownProps) {
+  return {
+    blog: state.blog
+  }
+}
+export default connect(mapStateToProps)(Blog)
